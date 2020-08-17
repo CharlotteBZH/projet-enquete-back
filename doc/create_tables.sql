@@ -65,6 +65,5 @@ BEGIN;
         "chapter_id" INTEGER NOT NULL REFERENCES chapter("id") ON DELETE CASCADE
     );
 
-
-
+COMMIT;
 
