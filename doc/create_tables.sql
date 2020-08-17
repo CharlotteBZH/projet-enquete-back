@@ -42,6 +42,7 @@ BEGIN;
     CREATE TABLE IF NOT EXISTS "chapter" (
         "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
         "name" TEXT NOT NULL DEFAULT ''
+        --ici pas besoin de clé étrangère puisque les info souhaité sont représentées dans la table d'association -> many to many
         -- "place_character_question_id" INTEGER NOT NULL REFERENCES place_character_question("id") ON DELETE CASCADE
     );
 
@@ -49,7 +50,8 @@ BEGIN;
         "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
         "description" TEXT NOT NULL DEFAULT '',
         "response" TEXT NOT NULL DEFAULT '',
-        "chapter_id" INTEGER NOT NULL REFERENCES chapter("id") ON DELETE CASCADE
+        -- idem ici les liens sont déjà représentés dans la table d'assoc
+        --"chapter_id" INTEGER NOT NULL REFERENCES chapter("id") ON DELETE CASCADE
         -- "character_id" INTEGER NOT NULL REFERENCES character("id") ON DELETE CASCADE
     );
 
@@ -66,7 +68,7 @@ BEGIN;
     );
 
 -- Maintenant on peut créer la référence vers la table question pour le champ "question_id" dans la table "answer" afin de réprésenter notre clé étrangère.
--- On remarquera ici la présence de l'instruction FOREIGN KEY qui dit explicitement que ceette colonne sert de clé étrangère faisaint référence à la colonne question de la table question
+-- On remarquera ici la présence de l'instruction FOREIGN KEY qui dit explicitement que cette colonne sert de clé étrangère faisaint référence à la colonne question de la table question
 -- Lors de la création d'une table ce détail est implicite
 -- ALTER TABLE "answer"
 --  ADD FOREIGN KEY ("question_id") REFERENCES "question" ("id");
