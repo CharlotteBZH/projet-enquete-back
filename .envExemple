@@ -1,0 +1,2 @@
+PG_URL=postgres://okanban:okanban@localhost/okanban
+PORT=3000
