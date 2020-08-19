@@ -1,0 +1,22 @@
+### service indisponible
+GET http://localhost:5050/404
+
+##############################  #############################
+
+### 
+GET http://localhost:5050/
+
+### 
+POST http://localhost:5050/
+Content-Type: application/x-www-form-urlencoded
+
+name= info a donner
+&position= autre info
+
+### modification 
+PATCH http://localhost:5050/
+Content-Type: application/x-www-form-urlencoded
+
+name= info a donner
+&position= autre info
+
