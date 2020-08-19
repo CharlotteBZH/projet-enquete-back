@@ -12,9 +12,9 @@ VALUES
     ('Couteau');
 
 INSERT INTO "character"
-    ("name", "picture", "alibis", "motive_id", "weapon_id")
+    ("name", "picture", "is_guilty", "is_suspect" "alibi", "motive_id", "weapon_id")
 VALUES
-    ('Dorian', 'photo', 'Pas d’alibi, il était retourné dans sa chambre au moment du meurtre.', 1, 1);
+    ('Dorian', 'photo', false, false,'Pas d’alibi, il était retourné dans sa chambre au moment du meurtre.', 1, 1);
 --     ('Tonya', 'photo', 'Mort.'),
 --     ('Yann', 'photo', 'Entrain de boir un verre de St Emilion 1900 avec Baptiste dans le salon.
 -- On apprend après, qu’il cherchait le tire-bouchon dans la cuisine puis son bureau.
