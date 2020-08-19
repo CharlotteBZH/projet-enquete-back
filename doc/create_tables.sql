@@ -35,7 +35,7 @@ BEGIN;
         "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
         "name" TEXT NOT NULL DEFAULT '',
         "picture" TEXT NOT NULL DEFAULT '',
-        "alibis" TEXT NOT NULL DEFAULT '',
+        "alibi" TEXT NOT NULL DEFAULT '',
         "motive_id" INTEGER NOT NULL REFERENCES motive("id") ON DELETE CASCADE,
         "weapon_id" INTEGER NOT NULL REFERENCES weapon("id") ON DELETE CASCADE
     );
