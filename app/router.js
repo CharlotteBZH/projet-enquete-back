@@ -10,12 +10,12 @@ router.get('/', (req, res) => {
     res.send('hello');
 });
 
+router.get('/play/id:chapter/id:place', playController.getChapterPlace);
+
 router.use((req, res) => {
     res.status(404).send('Service does not exists\nSee : https://doc.localhost.api');
 });
 
-/* PLAY */
-router.get('/play', playController.getAllChapters);
 
 
 module.exports = router;

@@ -1,7 +1,7 @@
 const Chapters = require('../models/chapter');
 
 const playController = {
-    getAllChapters: () => {
+    getChapterPlace: () => {
 
         console.log("je suis le playController");
     }
