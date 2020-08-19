@@ -41,39 +41,107 @@ Weapon.belongsTo(Character, {
     foreignKey: 'weapon_id'
 });
 
-// place - character - question
+// chapter - place - character - question
+
+//chapter-place association
+
+Place.belongsToMany(Chapter, {
+    as: 'chapter_p',
+    through: 'chapter_place_character_question',
+    foreignKey: 'place_id',
+    otherKey: 'chapter_id',
+
+});
+
+Chapter.belongsToMany(Place, {
+    as: 'places_c',
+    through: 'chapter_place_character_question',
+    foreignKey: 'chapter_id',
+    otherKey: 'place_id',
+});
+
+//chapter-character association
+
+Chapter.belongsToMany(Character, {
+    as: 'characters_c',
+    through: 'chapter_place_character_question',
+    foreignKey: 'chapter_id',
+    otherKey: 'character_id',
+
+});
+
+Character.belongsToMany(Chapter, {
+    as: 'chapters_c',
+    through: 'chapter_place_character_question',
+    foreignKey: 'character_id',
+    otherKey: 'chapter_id',
+});
+
+//chapter-question association
+
+Chapter.belongsToMany(Question, {
+    as: 'questions_c',
+    through: 'chapter_place_character_question',
+    foreignKey: 'chapter_id',
+    otherKey: 'question_id',
+});
+
+Question.belongsToMany(Chapter, {
+    as: 'chapters_q',
+    through: 'chapter_place_character_question',
+    foreignKey: 'question_id',
+    otherKey: 'chapter_id',
+});
+
+
+
+//place-character association
+
 Place.belongsToMany(Character, {
-    through: 'place_character_question',
-    as: 'character',
-    foreignKey: 'place_id'
+    as: 'characters_p',
+    through: 'chapter_place_character_question',
+    foreignKey: 'place_id',
+    otherKey: 'character_id',
+
 });
 
 Character.belongsToMany(Place, {
-    through: 'place_character_question',
-    as: 'place',
-    foreignKey: 'character_id'
+    as: 'places_char',
+    through: 'chapter_place_character_question',
+    foreignKey: 'character_id',
+    otherKey: 'place_id',
 });
 
+
+//question-character association
+
 Character.belongsToMany(Question, {
-    through: 'place_character_question',
-    as: 'question',
-    foreignKey: 'character_id'
+    as: 'questions_c',
+    through: 'chapter_place_character_question',
+    foreignKey: 'character_id',
+    otherKey: 'question_id',
 });
 
 Question.belongsToMany(Character, {
-    through: 'place_character_question',
-    as: 'character',
-    foreignKey: 'question_id'
+    as: 'characters_q',
+    through: 'chapter_place_character_question',
+    foreignKey: 'question_id',
+    otherKey: 'character_id',
 });
 
+
+//place-question association
+
 Place.belongsToMany(Question, {
-    through: 'place_character_question',
-    as: 'question',
-    foreignKey: 'place_id'
+    as: 'questions_p',
+    through: 'chapter_place_character_question',
+    foreignKey: 'place_id',
+    otherKey: 'question_id',
 });
 
 Question.belongsToMany(Place, {
-    through: 'place_character_question',
-    as: 'place',
-    foreignKey: 'question_id'
+    as: 'places_q',
+    through: 'chapter_place_character_question',
+    foreignKey: 'question_id',
+    otherKey: 'place_id',
 });
