@@ -1,4 +1,4 @@
-const Chapters = require('../models/chapters');
+const Chapters = require('../models/chapter');
 
 const playController = {
     getAllChapters: () => {
