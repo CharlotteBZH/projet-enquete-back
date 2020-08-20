@@ -3,7 +3,7 @@ INSERT INTO "motive"
     ("description")
 VALUES
     ('toto tata'),
-    ('Tonya se plaint trop alors qu'elle a une vie parfaite, que tout le monde l'aime. alors que Lily, même ses parents n'en n'ont rien à faire d'elle. Lily avoue vouloir prendre sa place. Tonya dit à lily qu'elle est folle, qu'elle ne s'approche plus d'elle. Lily c est énerve, et la attraper. Tonya c est débatue et est parvenue à se libérer de l étreinte de lily et a commencer à s'éloigner rapidement. Lily a sortie un couteau de son sac et a courue après tonya pour lui enfonce dans le dos au niveau des poumons.');
+    ('Tonya se plaint trop alors qu elle a une vie parfaite, que tout le monde l aime. alors que Lily, même ses parents n en n ont rien à faire d elle. Lily avoue vouloir prendre sa place. Tonya dit à lily qu elle est folle, qu elle ne s approche plus d elle. Lily c est énerve, et la attraper. Tonya c est débatue et est parvenue à se libérer de l étreinte de lily et a commencer à s éloigner rapidement. Lily a sortie un couteau de son sac et a courue après tonya pour lui enfonce dans le dos au niveau des poumons.');
 INSERT INTO "weapon"
     ("name")
 VALUES
@@ -11,7 +11,7 @@ VALUES
 INSERT INTO "character"
     ("name", "picture", "is_guilty", "is_suspect", "alibi", "motive_id", "weapon_id")
 VALUES
-    ('Dorian', 'photo', false, false,'Pas d'alibi, il était retourné dans sa chambre au moment du meurtre.', 1, 1);
+    ('Dorian', 'photo', false, false,'Pas dalibi, il était retourné dans sa chambre au moment du meurtre.', 1, 1);
 --     ('Tonya', 'photo', 'Mort.'),
 --     ('Yann', 'photo', 'Entrain de boir un verre de St Emilion 1900 avec Baptiste dans le salon.
 -- On apprend après, qu'il cherchait le tire-bouchon dans la cuisine puis son bureau.
