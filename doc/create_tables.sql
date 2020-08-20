@@ -5,6 +5,7 @@ BEGIN;
     -- Nous supprimerons ensuite les tables 'si elles existent’, pour pouvoir à chaque fois retravailler sur une base saine.
 
     DROP TABLE IF EXISTS 
+"user",
 "chapter",
 "storytelling",
 "answer",
@@ -15,6 +16,13 @@ BEGIN;
 "weapon";
 
     -- Ensuite on la (re)crée
+    CREATE TABLE IF NOT EXISTS "user" (
+        "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        "pseudo" TEXT NOT NULL DEFAULT '',
+        "mail" TEXT NOT NULL DEFAULT '',
+        "pwd" TEXT NOT NULL DEFAULT ''
+    );
+
 
     CREATE TABLE IF NOT EXISTS "place" (
         "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
