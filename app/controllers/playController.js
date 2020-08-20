@@ -7,19 +7,16 @@ const playController = {
       const { chapterId, placeId, storytellingId } = req.params;
 
       let chapter = await Chapter.findByPk(chapterId);
-
       if (!chapter) {
         res.status(404).json('Cant find chapter with id ' + chapterId);
       }
 
       let place = await Place.findByPk(placeId);
-
       if (!place) {
         res.status(404).json('Cant find place with id ' + placeId);
       }
 
       let storytelling = await Storytelling.findByPk(storytellingId);
-
       if (!storytelling) {
         res.status(404).json('Cant find storytelling with id ' + storytellingId);
       }
@@ -37,27 +34,61 @@ const playController = {
       const { chapterId, placeId, characterId, questionId } = req.params;
 
       let chapter = await Chapter.findByPk(chapterId);
-
       if (!chapter) {
         res.status(404).json('Cant find chapter with id ' + chapterId);
       }
 
       let place = await Place.findByPk(placeId);
-
       if (!place) {
         res.status(404).json('Cant find place with id ' + placeId);
       }
 
       let character = await Character.findByPk(characterId);
-
       if (!character) {
         res.status(404).json('Cant find character with id ' + characterId);
       }
 
       let question = await Question.findByPk(questionId);
-
       if (!question) {
         res.status(404).json('Cant find question with id ' + questionId);
+      }
+
+      res.json(question);
+
+    } catch (error) {
+      res.status(500).json(error);
+    }
+
+  },
+
+  getGoodAnswer: async (req, res) => {
+    try {
+      // route : /play/:chapterId/:placeId/:characterId/:questionId/:answerId
+      const { chapterId, placeId, characterId, questionId, answerId } = req.params;
+
+      let chapter = await Chapter.findByPk(chapterId);
+      if (!chapter) {
+        res.status(404).json('Cant find chapter with id ' + chapterId);
+      }
+
+      let place = await Place.findByPk(placeId);
+      if (!place) {
+        res.status(404).json('Cant find place with id ' + placeId);
+      }
+
+      let character = await Character.findByPk(characterId);
+      if (!character) {
+        res.status(404).json('Cant find character with id ' + characterId);
+      }
+
+      let question = await Question.findByPk(questionId);
+      if (!question) {
+        res.status(404).json('Cant find question with id ' + questionId);
+      }
+
+      let answer = await Answer.findByPk(answerId);
+      if (!answer) {
+        res.status(404).json('Cant find answer with id ' + answerId);
       }
 
       res.json(question);

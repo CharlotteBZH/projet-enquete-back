@@ -12,6 +12,7 @@ router.get('/', (req, res) => {
 
 router.get('/play/:chapterId/:placeId/:storytellingId', playController.getGoodStorytelling);
 router.get('/play/:chapterId/:placeId/:characterId/:questionId', playController.getGoodQuestion);
+router.get('/play/:chapterId/:placeId/:characterId/:questionId/:answerId', playController.getGoodAnswer);
 
 router.use((req, res) => {
     res.status(404).send('Service does not exists\nSee : https://doc.localhost.api');
