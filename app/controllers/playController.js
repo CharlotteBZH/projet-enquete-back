@@ -1,5 +1,19 @@
 const { Chapters, Place, Character, Question, Storytelling, Motive, Answer } = require('../models');
 
+/* routes
+/play/:chapterId/:placeId
+=> find by pk pour chapter et place
+=> dans place faire 2 include de character + question 
+
+/play/:chapterId/:placeId/:storytellingId
+=> find by pk pour chapter et place
+=> findall du storytelling
+
+/play/
+*/
+
+
+/*
 const playController = {
   //route : /play/:chapterId/:placeId/:storytellingId
   getGoodStorytelling: async (req, res) => {
@@ -102,7 +116,7 @@ const playController = {
 }
 
 
-
+*/
 //prise d'exemple ci-dessous   
 /*removeTagFromCard: async (req, res) => {
     try {
