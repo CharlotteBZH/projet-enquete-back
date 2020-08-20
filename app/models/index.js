@@ -41,6 +41,17 @@ Weapon.belongsTo(Character, {
     foreignKey: 'weapon_id'
 });
 
+// question - answer
+Question.hasOne(Answer, {
+    as: 'answer',
+    foreignKey: 'answer_id'
+});
+
+Answer.belongsTo(Question, {
+    as: 'question',
+    foreignKey: 'answer_id'
+});
+
 // chapter - place - character - question
 
 //chapter-place association
