@@ -1,13 +1,13 @@
 const { DataTypes, Model } = require('sequelize');
 const sequelize = require('../db');
 
-class Question extends Model { };
+class Answer extends Model { };
 
-Question.init({
+Answer.init({
     description: DataTypes.TEXT
 }, {
     sequelize,
-    tableName: "question"
+    tableName: "answer"
 });
 
-module.exports = Question;
+module.exports = Answer;
