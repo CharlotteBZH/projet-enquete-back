@@ -7,6 +7,7 @@ BEGIN;
     DROP TABLE IF EXISTS 
 "chapter",
 "storytelling",
+"answer",
 "question",
 "place",
 "character",
@@ -48,13 +49,19 @@ BEGIN;
         "name" TEXT NOT NULL DEFAULT ''
     );
 
+    CREATE TABLE IF NOT EXISTS "answer" (
+        "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        "description" TEXT NOT NULL DEFAULT ''
+    );
+
     CREATE TABLE IF NOT EXISTS "question" (
         "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
         "description" TEXT NOT NULL DEFAULT '',
-        "response" TEXT NOT NULL DEFAULT ''
+        "answer_id" INTEGER NOT NULL REFERENCES answer("id") ON DELETE CASCADE
     );
 
-    CREATE TABLE IF NOT EXISTS "place_character_question" (
+    CREATE TABLE IF NOT EXISTS "chapter_place_character_question" (
+        "chapter_id" INTEGER NOT NULL REFERENCES chapter("id") ON DELETE CASCADE,
         "place_id" INTEGER NOT NULL REFERENCES place("id") ON DELETE CASCADE,
         "character_id" INTEGER NOT NULL REFERENCES character("id") ON DELETE CASCADE,
         "question_id" INTEGER NOT NULL REFERENCES question("id") ON DELETE CASCADE
