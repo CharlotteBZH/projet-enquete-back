@@ -1,16 +1,15 @@
 -- On démarre une transaction afin de s'assurer de la cohérence globale de la BDD
 BEGIN;
     -- Nous supprimerons ensuite les tables 'si elles existent', pour pouvoir à chaque fois retravailler sur une base saine.
-    DROP TABLE IF EXISTS 
-    
+    DROP TABLE IF EXISTS
 "place",
 "motive",
 "weapon",
 "character",
 "chapter",
-"answer",
+"situation",
 "question",
-"chapter_place_character",
+"situation_character",
 "storytelling",
 "user";
 
@@ -42,28 +41,33 @@ BEGIN;
         "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
         "name" TEXT NOT NULL DEFAULT ''
     );
-    CREATE TABLE IF NOT EXISTS "answer" (
+
+   CREATE TABLE IF NOT EXISTS "situation" (
         "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-        "description" TEXT NOT NULL DEFAULT ''
+        "chapter_id" INTEGER NOT NULL REFERENCES chapter("id") ON DELETE CASCADE,
+        "place_id" INTEGER NOT NULL REFERENCES place("id") ON DELETE CASCADE
     );
+
     CREATE TABLE IF NOT EXISTS "question" (
         "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
         "description" TEXT NOT NULL DEFAULT '',
-        "answer_id" INTEGER NOT NULL REFERENCES answer("id") ON DELETE CASCADE,
-        "chapter_id" INTEGER NOT NULL REFERENCES chapter("id") ON DELETE CASCADE,
-        "place_id" INTEGER NOT NULL REFERENCES place("id") ON DELETE CASCADE,
+        "answer" TEXT NOT NULL,
+        "character_id" INTEGER NOT NULL REFERENCES character("id") ON DELETE CASCADE,
+        "situation_id" INTEGER NOT NULL REFERENCES situation("id") ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS "situation_character" (
+        "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        "situation_id" INTEGER NOT NULL REFERENCES situation("id") ON DELETE CASCADE,
         "character_id" INTEGER NOT NULL REFERENCES character("id") ON DELETE CASCADE
     );
-    CREATE TABLE IF NOT EXISTS "chapter_place_character" (
-        "chapter_id" INTEGER NOT NULL REFERENCES chapter("id") ON DELETE CASCADE,
-        "place_id" INTEGER NOT NULL REFERENCES place("id") ON DELETE CASCADE,
-        "character_id" INTEGER NOT NULL REFERENCES character("id") ON DELETE CASCADE
-    );
+
     CREATE TABLE IF NOT EXISTS "storytelling" (
         "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
         "sentence" TEXT NOT NULL DEFAULT '',
         "chapter_id" INTEGER NOT NULL REFERENCES chapter("id") ON DELETE CASCADE
     );
+
     CREATE TABLE IF NOT EXISTS "user" (
         "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
         "pseudo" TEXT NOT NULL,

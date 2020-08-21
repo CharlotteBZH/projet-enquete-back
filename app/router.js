@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     res.send('hello');
 });
 
-router.get('/play/:chapterId/:placeId',playController.getCharacterQuestionInChapter);
+router.get('/play/:situationId',playController.getCharacterQuestionInChapter);
 //router.get('/play/:chapterId/:placeId/:storytellingId', playController.getGoodStorytelling);
 router.get('/play',playController.getPlay);
 
