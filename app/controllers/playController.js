@@ -1,4 +1,4 @@
-const { Chapters, Place, Character, Question, Storytelling, Motive, Answer } = require('../models');
+const { Chapter, Place, Character, Question, Storytelling, Motive, Answer } = require('../models');
 /* routes
 /play/:chapterId/:placeId
 => find by pk pour chapter et place
@@ -36,8 +36,9 @@ const playController = {
   },
   
   getPlay: async (req, res) => {
+    console.log("test");
     try {
-      let chapter = await Chapter.findAll()
+      let chapter = await Chapter.findAll();
     if (!chapter) {
       res.status(404).json('Cant find chapter with id ' + chapterId);
     } else {
@@ -47,7 +48,7 @@ const playController = {
     console.trace(error);
     res.status(500).json(error);
   }
-}
+},
 /*
 const playController = {
   //route : /play/:chapterId/:placeId/:storytellingId
@@ -179,7 +180,7 @@ const playController = {
         res.status(500).json(error);
       }
     },
+     */
 }
-*/
 //route : play/chapter/place/character/question
 module.exports = playController;

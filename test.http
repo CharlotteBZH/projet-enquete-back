@@ -1,5 +1,5 @@
 ### service indisponible
-GET http://localhost:3001/play/1;
+GET http://localhost:3001/play
 
 ##############################  #############################
 

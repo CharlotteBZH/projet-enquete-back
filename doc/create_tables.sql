@@ -2,6 +2,7 @@
 BEGIN;
     -- Nous supprimerons ensuite les tables 'si elles existent', pour pouvoir à chaque fois retravailler sur une base saine.
     DROP TABLE IF EXISTS 
+    
 "place",
 "motive",
 "weapon",
@@ -12,6 +13,7 @@ BEGIN;
 "chapter_place_character",
 "storytelling",
 "user";
+
     -- Ensuite on la (re)crée
     CREATE TABLE IF NOT EXISTS "place" (
         "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,

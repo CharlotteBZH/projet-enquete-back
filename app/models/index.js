@@ -10,61 +10,64 @@ const Weapon = require('./weapon');
 // chapter - storytelling
 Chapter.hasMany(Storytelling, {
     as: 'storytelling',
-    foreignKey: 'chapter_id'
+    foreignKey: 'chapter_id',
+  
 });
 Storytelling.belongsTo(Chapter, {
     as: 'chapter',
-    foreignKey: 'chapter_id'
+    foreignKey: 'chapter_id',
+ 
 });
 
 // character - motive
 Character.hasOne(Motive, {
     as: 'motive',
-    foreignKey: 'motive_id'
+    foreignKey: 'motive_id',
+
 });
 Motive.belongsTo(Character, {
     as: 'character',
-    foreignKey: 'character_id'
+    foreignKey: 'character_id',
 });
 
 // character - weapon
 Character.hasOne(Weapon, {
     as: 'weapon',
-    foreignKey: 'weapon_id'
+    foreignKey: 'weapon_id',
 });
 Weapon.belongsTo(Character, {
     as: 'character',
-    foreignKey: 'character_id'
+    foreignKey: 'character_id',
 });
 
 // question - chapter
 Chapter.hasMany(Question, {
     as: 'questions',
-    foreignKey: 'chapter_id'
+    foreignKey: 'chapter_id',
 });
 Question.belongsTo(Chapter, {
     as: 'chapter',
-    foreignKey: 'chapter_id'
+    foreignKey: 'chapter_id',
 });
 
 // question - place
 Place.hasMany(Question, {
     as: 'questions',
-    foreignKey: 'place_id'
+    foreignKey: 'place_id',
 });
 Question.belongsTo(Place, {
     as: 'place',
-    foreignKey: 'place_id'
+    foreignKey: 'place_id',
 });
 
 // question - character
 Character.hasMany(Question, {
     as: 'questions',
-    foreignKey: 'character_id'
+    foreignKey: 'character_id',
 });
 Question.belongsTo(Character, {
     as: 'character',
-    foreignKey: 'character_id'
+    foreignKey: 'character_id',
 });
 
 // ****** chapter_place_character ******** //
@@ -109,3 +112,5 @@ Character.belongsToMany(Place, {
     foreignKey: 'character_id',
     otherKey: 'place_id',
 });
+
+module.exports={ Chapter };
