@@ -7,6 +7,7 @@ BEGIN;
 "weapon",
 "character",
 "chapter",
+"answer",
 "question",
 "chapter_place_character",
 "storytelling",
@@ -39,10 +40,14 @@ BEGIN;
         "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
         "name" TEXT NOT NULL DEFAULT ''
     );
+    CREATE TABLE IF NOT EXISTS "answer" (
+        "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        "description" TEXT NOT NULL DEFAULT ''
+    );
     CREATE TABLE IF NOT EXISTS "question" (
         "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
         "description" TEXT NOT NULL DEFAULT '',
-        "answer" TEXT NOT NULL,
+        "answer_id" INTEGER NOT NULL REFERENCES answer("id") ON DELETE CASCADE,
         "chapter_id" INTEGER NOT NULL REFERENCES chapter("id") ON DELETE CASCADE,
         "place_id" INTEGER NOT NULL REFERENCES place("id") ON DELETE CASCADE,
         "character_id" INTEGER NOT NULL REFERENCES character("id") ON DELETE CASCADE
