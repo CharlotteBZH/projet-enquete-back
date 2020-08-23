@@ -5,6 +5,7 @@ const Place = require("./place");
 const Question = require("./question");
 const Storytelling = require("./storytelling");
 const Weapon = require("./weapon");
+const Situation = require("./situation");
 
 /* associations */
 // chapter - storytelling
@@ -110,4 +111,4 @@ Character.belongsToMany(Place, {
   otherKey: "place_id",
 });
 
-module.exports = { Chapter, Character, Motive, Place, Question, Storytelling };
+module.exports = { Chapter, Character, Motive, Place, Question, Storytelling, Situation };

@@ -6,35 +6,18 @@ const {
   Storytelling,
   Motive,
   Answer,
+  Situation
 } = require("../models");
 
 const playController = {
   // route : /play/:situationId
   getCharacterQuestionInChapter: async (req, res) => {
     try {
-      const chapterId = req.params.chapterId;
-      const placeId = req.params.placeId;
+      const situationId = req.params.situationId;
       console.log("toto", req.params);
-      let chapter = await Chapter.findByPk(chapterId);
-      if (!chapter) {
-        res.status(404).json("Cant find chapter with id " + chapterId);
-      }
-      let place = await Place.findByPk(placeId, {
-        include: [
-          {
-            association: "characters_p",
-            include: [
-              {
-                association: "questions",
-              },
-            ],
-          },
-        ],
-      });
-      if (!place) {
-        res.status(404).json("Cant find chapter with id " + placeId);
-      } else {
-        res.json(chapter.place);
+      let situation = await Situation.findByPk(situationId);
+      if (!situation) {
+        res.status(404).json("Cant find situation with id " + situationId);
       }
     } catch (error) {
       console.trace(error);
