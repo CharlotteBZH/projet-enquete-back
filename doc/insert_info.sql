@@ -47,12 +47,23 @@ VALUES
     ('Chapitre 6'),
     ('Chapitre 7');
 
-INSERT INTO "question"
-    ("description", "answer", "chapter_id", "place_id", "character_id")
+INSERT INTO "situation"
+    ("chapter_id", "place_id")
 VALUES
-    ('description 1', 'toto', 1, 1, 1),
-    ('description 2', 'tutu', 2, 2, 2);
+    (1, 1),
+    (2, 2);
 
+INSERT INTO "question"
+    ("description", "answer", "character_id", "situation_id")
+VALUES
+    ('description 1', 'answer1', 1, 1),
+    ('description 2', 'answer2', 2, 2);
+
+INSERT INTO "situation_character"
+    ("situation_id", "character_id")
+VALUES
+    (1, 1),
+    (2, 2);
 
 INSERT INTO "storytelling"
     ("sentence", "chapter_id")
