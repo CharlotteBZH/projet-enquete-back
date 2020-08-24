@@ -7,7 +7,7 @@ Situation.init({
     
 }, {
     sequelize,
-    tableName: "Situation"
+    tableName: "situation"
 });
 
 module.exports = Situation;

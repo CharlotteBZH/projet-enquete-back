@@ -57,6 +57,7 @@ INSERT INTO "question"
     ("description", "answer", "character_id", "situation_id")
 VALUES
     ('description 1', 'answer1', 1, 1),
+    ('description 1.1', 'answer1.1', 2, 1),
     ('description 2', 'answer2', 2, 2);
 
 INSERT INTO "situation_character"
