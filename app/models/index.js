@@ -8,6 +8,7 @@ const Weapon = require("./weapon");
 const Situation = require("./situation");
 
 /* associations */
+
 // chapter - storytelling
 Chapter.hasMany(Storytelling, {
   as: "storytelling",
@@ -38,25 +39,17 @@ Weapon.belongsTo(Character, {
   foreignKey: "character_id",
 });
 
-// question - chapter
-Chapter.hasMany(Question, {
+
+// question - situation
+Situation.hasMany(Question, {
   as: "questions",
-  foreignKey: "chapter_id",
+  foreignKey: "situation_id",
 });
-Question.belongsTo(Chapter, {
-  as: "chapter",
-  foreignKey: "chapter_id",
+Question.belongsTo(Situation, {
+  as: "situation",
+  foreignKey: "situation_id",
 });
 
-// question - place
-Place.hasMany(Question, {
-  as: "questions",
-  foreignKey: "place_id",
-});
-Question.belongsTo(Place, {
-  as: "place",
-  foreignKey: "place_id",
-});
 
 // question - character
 Character.hasMany(Question, {
@@ -68,47 +61,38 @@ Question.belongsTo(Character, {
   foreignKey: "character_id",
 });
 
-// ****** chapter_place_character ******** //
-//chapter-place association
+
+
+// ****** tables d'associations ******** //
+
+//chapter-place association =>Situation
 Place.belongsToMany(Chapter, {
   as: "chapter_p",
-  through: "chapter_place_character",
+  through: "situation",
   foreignKey: "place_id",
   otherKey: "chapter_id",
 });
 Chapter.belongsToMany(Place, {
   as: "places_c",
-  through: "chapter_place_character",
+  through: "situation",
   foreignKey: "chapter_id",
   otherKey: "place_id",
 });
 
-//chapter-character association
-Chapter.belongsToMany(Character, {
+//Situation-character association
+Situation.belongsToMany(Character, {
   as: "characters_c",
-  through: "chapter_place_character",
-  foreignKey: "chapter_id",
+  through: "situation_character",
+  foreignKey: "situation_id",
   otherKey: "character_id",
 });
-Character.belongsToMany(Chapter, {
-  as: "chapters_c",
-  through: "chapter_place_character",
+Character.belongsToMany(Situation, {
+  as: "situations_c",
+  through: "situation_character",
   foreignKey: "character_id",
-  otherKey: "chapter_id",
+  otherKey: "situation_id",
 });
 
-//place-character association
-Place.belongsToMany(Character, {
-  as: "characters_p",
-  through: "chapter_place_character",
-  foreignKey: "place_id",
-  otherKey: "character_id",
-});
-Character.belongsToMany(Place, {
-  as: "places_char",
-  through: "chapter_place_character",
-  foreignKey: "character_id",
-  otherKey: "place_id",
-});
+
 
 module.exports = { Chapter, Character, Motive, Place, Question, Storytelling, Situation };
