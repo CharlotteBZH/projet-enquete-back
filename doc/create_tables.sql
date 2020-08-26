@@ -34,8 +34,8 @@ BEGIN;
         "is_guilty" BOOLEAN NOT NULL,
         "is_suspect" BOOLEAN NOT NULL,
         "alibi" TEXT NOT NULL DEFAULT '',
-        "motive_id" INTEGER NOT NULL REFERENCES motive("id") ON DELETE CASCADE,
-        "weapon_id" INTEGER NOT NULL REFERENCES weapon("id") ON DELETE CASCADE
+        "motive_id" INTEGER REFERENCES motive("id") ON DELETE CASCADE,
+        "weapon_id" INTEGER REFERENCES weapon("id") ON DELETE CASCADE
     );
     CREATE TABLE IF NOT EXISTS "chapter" (
         "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,

@@ -6,6 +6,7 @@ VALUES
     ("Politique, Tonya raconter ce qu'elle savait à un journaliste"),
     ('Jalousie par rapport à Baptiste'),
     ('Jalousie par rapport à Dorian');
+
 INSERT INTO "weapon"
     ("name")
 VALUES
@@ -19,15 +20,13 @@ VALUES
     ('Valentine', 'photo', false, true, "Etait malade dans la salle de bain de CLaire avec cette dernière qui s'occupait d'elle.", 4, 1),
     ('Lily', 'photo', true, true, 'Est sensée être dans la maison voisine avec son frère.', 1, 1),
     ('Maxime', 'photo', false, true, 'Dans la maison voisine avec sa soeur.', null, 1),
-    ('Policier', 'photo', false, false, null, null, null),
-    ('Tonya', 'photo', false, false, null, null, null);
+    ('Policier', 'photo', false, false, "pas d'alibi", null, 1);
 
-   
 INSERT INTO "place"
     ("name", "picture")
 VALUES
     ('Chez Dorian', 'photo'),
-    ('Devant chez Tonya', 'photo'),
+    ('Devant chez Tonya', 'photo cratoonifiée'),
     ('Chambre de Dorian', '../public/images/chambre-dorian.jpg'),
     ('Cuisine', '../public/images/cuisine.jpg'),
     ('Salon', '../public/images/salon.jpg'),
@@ -37,7 +36,7 @@ VALUES
     ('Chambre de Tonya et Yann', '../public/images/chambre-tonya.jpg'),
     ('Sale de bain', '../public/images/sdb.jpg'),
     ('Bureau', 'photo'),
-    ('Photo Accueil', 'photo');
+    ('Devant chez Tonya', 'photo devant chez tonya mais animée en gif');
     
 INSERT INTO "chapter"
     ("name")
@@ -83,7 +82,7 @@ VALUES
     (16, 3),
     (17, 3),
     (18, 3),
-    (19, 2);
+    (19, 12);
 
 INSERT INTO "question"
     ("description", "answer", "character_id", "situation_id")
@@ -110,28 +109,17 @@ VALUES
 INSERT INTO "situation_character"
     ("situation_id", "character_id")
 VALUES
-    (1, null),
-    (2, null),
-    (3, null),
-    (4, null),
-    (5, null),
     (6, 3),
     (6, 2),
     (7, 6),
     (7, 5),
-    (8, null),
-    (9, null),
-    (10, null),
     (11, 1),
     (12, 3),
     (12, 2),
     (13, 6),
     (14, 5),
-    (15, null),
     (16, 7),
-    (17, 7),
-    (18, null),
-    (19, null);
+    (17, 7);
 
 INSERT INTO "storytelling"
     ("sentence", "chapter_id")
