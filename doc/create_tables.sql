@@ -13,6 +13,7 @@ DROP TABLE IF EXISTS
 "storytelling",
 "user";
 
+
 -- Ensuite on la (re)crée
 CREATE TABLE IF NOT EXISTS "place" (
 "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -74,4 +75,5 @@ CREATE TABLE IF NOT EXISTS "user" (
 "pwd" TEXT NOT NULL,
 "mail" TEXT NOT NULL
 );
+
 COMMIT;

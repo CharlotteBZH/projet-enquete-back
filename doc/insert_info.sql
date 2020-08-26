@@ -3,9 +3,10 @@ INSERT INTO "motive"
 ("description")
 VALUES
 ('Admiration obsessionnelle'),
-("Politique, Tonya raconter ce qu'elle savait à un journaliste"),
+('Politique, Tonya raconter ce qu elle savait à un journaliste'),
 ('Jalousie par rapport à Baptiste'),
 ('Jalousie par rapport à Dorian');
+
 
 INSERT INTO "weapon"
 ("name")
@@ -22,6 +23,7 @@ VALUES
 ('Maxime', 'photo', false, true, 'Dans la maison voisine avec sa soeur.', null, 1),
 ('Policier', 'photo', false, false, "pas d'alibi", null, 1);
 
+
 INSERT INTO "place"
 ("name", "picture")
 VALUES
@@ -37,6 +39,7 @@ VALUES
 ('Sale de bain', '../public/images/sdb.jpg'),
 ('Bureau', 'photo'),
 ('Devant chez Tonya', 'photo devant chez tonya mais animée en gif');
+
 INSERT INTO "chapter"
 ("name")
 VALUES
@@ -59,6 +62,7 @@ VALUES
 ('Chapitre 17');
 ('Chapitre 18');
 ('Chapitre 19');
+
 
 INSERT INTO "situation"
 ("chapter_id", "place_id")
@@ -83,11 +87,12 @@ VALUES
 (18, 3),
 (19, 12);
 
+
 INSERT INTO "question"
 ("description", "answer", "character_id", "situation_id")
 VALUES
-("Quel est ton métier ? ", "Je suis infirmière, j'ai passé mon diplôme l'an dernier.", 3, 6),
-("Tu es amie avec Tonya depuis combien de temps ? ", "En fait, je suis la cousine de Yann, c’est comme ça qu’on se connaît.", 3, 6),
+('Quel est ton métier ? ", "Je suis infirmière, j ai passé mon diplôme l an dernier.', 3, 6),
+('Tu es amie avec Tonya depuis combien de temps ?', 'En fait, je suis la cousine de Yann, c’est comme ça qu’on se connaît.', 3, 6),
 ("Tu es très proches avec Yann ?", "Oui, on a beaucoup d’intérêts en commun! Le vin en est un *rires*", 2, 6),
 ("Alors Maxime! Toi et Lily vous faites quoi dans la vie ?", "Je suis actuellement en Science politique et ma soeur étudie en école de droits pour devenir avocate.", 6, 7),
 ("Vous vivez tous les deux en colocations pas loin d’ici ?", "Nous vivons chez nos parents, c’est la maison aux palmiers à une centaine de mètres sur la droite d’ici, tu as dû passer devant lors de ta… promenade…", 5, 7),
@@ -105,6 +110,7 @@ VALUES
 ("Admirassion obsessionnelle", "Oh, je vois, tu penses que le mobile est lié à une admiration obsessionnelle pour Tonya", 7, 17)
 ;
 
+
 INSERT INTO "situation_character"
 ("situation_id", "character_id")
 VALUES
@@ -119,6 +125,7 @@ VALUES
 (14, 5),
 (16, 7),
 (17, 7);
+
 
 INSERT INTO "storytelling"
 ("sentence", "chapter_id")
@@ -149,10 +156,12 @@ Tonya tomba à terre, elle tenta de crier mais elle avait le souffle coupé et l
 Le collier, un cadeau que Tonya lui avait fait, fut le seul dérapage dans son plan machiavélique. C’est comme cela que l’étudiante en droit finit derrière les barreaux pour très longtemps...", 19)
 ;
 
+
 INSERT INTO "user"
 ("pseudo", "pwd", "mail")
 VALUES
 ('player', '1234', 'player@gmail.com');
+
 -- On enregistre les transactions en BDD si est seulement si tout c'est bien passé.
 -- Cette instruction signe la fin du fichier.
 COMMIT;
