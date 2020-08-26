@@ -6,6 +6,7 @@ const Question = require("./question");
 const Storytelling = require("./storytelling");
 const Weapon = require("./weapon");
 const Situation = require("./situation");
+const Situation_character = require("./situation_character");
 
 /* associations */
 
@@ -66,7 +67,28 @@ Question.belongsTo(Character, {
 // ****** tables d'associations ******** //
 
 //chapter-place association =>Situation
-Place.belongsToMany(Chapter, {
+
+//place-situation
+Place.hasMany(Situation, {
+  as: "situations",
+  foreignKey: "place_id",
+});
+Situation.belongsTo(Place, {
+  as: "place",
+  foreignKey: "place_id",
+});
+
+//chapter-situation
+Chapter.hasMany(Situation, {
+  as: "situations",
+  foreignKey: "chapter_id",
+});
+Situation.belongsTo(Chapter, {
+  as: "chapter",
+  foreignKey: "chapter_id",
+});
+
+/*Place.belongsToMany(Chapter, {
   as: "chapter_p",
   through: "situation",
   foreignKey: "place_id",
@@ -77,7 +99,7 @@ Chapter.belongsToMany(Place, {
   through: "situation",
   foreignKey: "chapter_id",
   otherKey: "place_id",
-});
+});*/
 
 //Situation-character association
 Situation.belongsToMany(Character, {
@@ -95,4 +117,4 @@ Character.belongsToMany(Situation, {
 
 
 
-module.exports = { Chapter, Character, Motive, Place, Question, Storytelling, Situation };
+module.exports = { Chapter, Character, Motive, Place, Question, Storytelling, Situation, Situation_character };
