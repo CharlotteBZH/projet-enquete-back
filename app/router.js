@@ -8,9 +8,11 @@ router.get('/', (req, res) => {
     res.send('hello');
 });
 
-router.get('/play/situation/:situationId',playController.getCharacterQuestionInChapter);
-//router.get('/play/:situationId/:storytellingId', playController.getGoodStorytelling);
+router.get('/play/situation/:chapterId',playController.getSituation);
 router.get('/play/storytelling/:chapterId',playController.getStory);
+router.get('/play/question/:situationId',playController.getCharacterQuestionInChapter);
+router.get('/play/character/:characterId',playController.getCharacter);
+
 
 router.use((req, res) => {
     res.status(404).send('Service does not exists\nSee : https://doc.localhost.api');
