@@ -9,9 +9,20 @@ const PORT = process.env.PORT || 5050;
 const app = express();
 
 
-//app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+app.use((request, response, next) => {
+  response.header('Access-Control-Allow-Origin', '*');
+  response.header('Access-Control-Allow-Credentials', true);
+  response.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  response.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  next();
+});
+
+app.use(cors());
+
+
 
 app.use(express.static(__dirname + '/public'));
 
