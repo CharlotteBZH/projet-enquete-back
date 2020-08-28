@@ -76,7 +76,7 @@ const playController = {
           }, raw: true
         });
         console.log("story", storytelling)
-        res.status(200).json("ok");
+        res.status(200).json(storytelling);
       }
     } catch (error) {
       res.status(500).json(error);
