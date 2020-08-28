@@ -131,7 +131,7 @@ INSERT INTO "storytelling"
 ("sentence", "chapter_id")
 VALUES
 ('Juillet 2019, moi Dorian, Dev Freelance me retrouvais sans client pour l''été lorsque je reçu une invitation de mon premier amour.', 1),
-('Lorsque j''arrive chez Tonya je découvre qu''elle a un nouveau petit ami nommé Yann. Elle me propose d''aller m''installer dans ma chambre en attendant le restaurant puis la soirée avec des amis.', 2)
+('Lorsque j''arrive chez Tonya je découvre qu''elle a un nouveau petit ami nommé Yann. Elle me propose d''aller m''installer dans ma chambre en attendant le restaurant puis la soirée avec des amis.', 2),
 ('Seul, je m''assois un instant sur le lit, je ne comprends pas trop ce que je fais là et quoi penser de cette situation embarrassante. Je décide de faire bonne figure malgré tout et sors de la pièce.', 3),
 ('En arrivant dans la cuisine, j''entends Tonya discuter avec une jeune fille. Mais elles s''interrompent en me voyant. Tonya me présente Lily pendant que je me fais à manger. Puis Lily s''en va et je me dispute avec Tonya', 4),
 ('En sortant de la cuisine je croise Valentine qui a entendu notre dispute. Je décide d''aller me promener un moment sur la plage pour décompresser.', 5),
