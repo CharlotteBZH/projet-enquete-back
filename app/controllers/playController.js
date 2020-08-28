@@ -14,15 +14,16 @@ const playController = {
   // route : /play/question/:situationId
   getCharacterQuestionInChapter: async (req, res) => {
     try {
-      const situationId = req.params.situationId;
+      const situationId = Number(req.params.situationId);
       let situation = await Situation.findByPk(situationId);
       if (!situation) {
         res.status(404).json("Cant find situation with id " + situationId);
       }
-      let characters= await Character.findAll({
-        attributes:['id'],
-        raw:true});
-        characters=characters.map((character)=>character.id);
+      let characters = await Character.findAll({
+        attributes: ['id'],
+        raw: true
+      });
+      characters = characters.map((character) => character.id);
       console.log(characters);
       //pb de conversion ici des characters pour le tableau en second argument
       let questionList = await Question.getForSituationAndCharacter(situationId, characters);
@@ -35,45 +36,47 @@ const playController = {
   },
 
   // route : /play/situation/:chapterId
-  
+
   getSituation: async (req, res) => {
     try {
-      const chapterId = req.params.chapterId;
-      console.log("chapter",chapterId) 
-      let chapter = await Chapter.findByPk(chapterId); 
+      const chapterId = Number(req.params.chapterId);
+      console.log("chapter", chapterId)
+      let chapter = await Chapter.findByPk(chapterId);
       if (!chapter) {
         res.status(404).json("Cant find chapter with id " + chapterId);
       } else {
         let situation = await Situation.findAll({
-          where : {
+          where: {
             chapter_id: chapterId,
           },
-          include: ['places'],
+          include: ['place'],
           raw: true
         });
         console.log(situation)
-      res.status(200).json("ok");
+        res.status(200).json(situation);
       }
     } catch (error) {
+      console.log(error);
       res.status(500).json(error);
     }
   },
 
-    // route : /play/storytelling/:chapterId
+  // route : /play/storytelling/:chapterId
   getStory: async (req, res) => {
     try {
       const chapterId = req.params.chapterId;
-      console.log("chapter",chapterId) 
-      let chapter = await Chapter.findByPk(chapterId); 
-    if (!chapter) {
-      res.status(404).json("Cant find chapter with id " + chapterId);
+      console.log("chapter", chapterId)
+      let chapter = await Chapter.findByPk(chapterId);
+      if (!chapter) {
+        res.status(404).json("Cant find chapter with id " + chapterId);
       } else {
         let storytelling = await Storytelling.findAll({
-          where : {
+          where: {
             chapter_id: chapterId,
-      }, raw: true});
-      console.log("story",storytelling) 
-      res.status(200).json("ok");
+          }, raw: true
+        });
+        console.log("story", storytelling)
+        res.status(200).json("ok");
       }
     } catch (error) {
       res.status(500).json(error);
@@ -103,11 +106,11 @@ const playController = {
   getCharacter: async (req, res) => {
     try {
       const characterId = req.params.characterId;
-      let character = await Character.findByPk(characterId, {raw: true});
+      let character = await Character.findByPk(characterId, { raw: true });
       if (!character) {
         res.status(404).json("Cant find character with id " + characterId);
       } else {
-        console.log(character) 
+        console.log(character)
         res.status(200).json("ok");
       }
     } catch (error) {
