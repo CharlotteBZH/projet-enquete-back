@@ -1,6 +1,7 @@
 const express = require('express');
 // import of the controllers
 const playController = require('./controllers/playController.js');
+const userController = require('./controllers/userController.js');
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -8,10 +9,13 @@ router.get('/', (req, res) => {
     res.send('hello');
 });
 
-router.get('/play/situation/:chapterId',playController.getSituation);
-router.get('/play/storytelling/:chapterId',playController.getStory);
-router.get('/play/question/:situationId',playController.getCharacterQuestionInChapter);
-router.get('/play/character/:characterId',playController.getCharacter);
+router.get('/play/situation/:chapterId', playController.getSituation);
+router.get('/play/storytelling/:chapterId', playController.getStory);
+router.get('/play/question/:situationId', playController.getCharacterQuestionInChapter);
+router.get('/play/character/:characterId', playController.getCharacter);
+
+//connexion
+router.post('/login', userController.loginPlayer);
 
 
 router.use((req, res) => {
