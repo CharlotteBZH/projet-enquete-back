@@ -27,18 +27,18 @@ VALUES
 INSERT INTO "place"
 ("name", "picture")
 VALUES
-('Chez Dorian', 'photo'),
-('Devant chez Tonya', 'photo cratoonifiée'),
+('Chez Dorian', '../public/images/chez-dorian.jpg'),
+('Devant chez Tonya', '../public/images/devant-chez-tonya.jpg'),
 ('Chambre de Dorian', '../public/images/chambre-dorian.jpg'),
 ('Cuisine', '../public/images/cuisine.jpg'),
 ('Salon', '../public/images/salon.jpg'),
 ('Plage de jour', 'photo'),
-('Plage de nuit', 'photo'),
+('Plage de nuit', '../public/images/plage-temporaire.jpg'),
 ('Chambre de Claire et Baptiste', '../public/images/chambre-claire.jpg'),
 ('Chambre de Tonya et Yann', '../public/images/chambre-tonya.jpg'),
 ('Sale de bain', '../public/images/sdb.jpg'),
 ('Bureau', 'photo'),
-('Devant chez Tonya', 'photo devant chez tonya mais animée en gif');
+('Devant chez Tonya', '../public/images/maison-anime.mkv');
 
 INSERT INTO "chapter"
 ("name")
