@@ -2,7 +2,7 @@
 GET http://localhost:3001/play/storytelling/1
 
 ### obtention des questions par personnage
-GET http://localhost:3001/play/question/1
+GET http://localhost:3001/play/question/6
 
 ### obtention un personnage
 GET http://localhost:3001/play/character/1
