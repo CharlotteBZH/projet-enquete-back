@@ -27,18 +27,18 @@ VALUES
 INSERT INTO "place"
 ("name", "picture")
 VALUES
-('Chez Dorian', '../public/images/chez-dorian.jpg'),
-('Devant chez Tonya', '../public/images/devant-chez-tonya.jpg'),
-('Chambre de Dorian', '../public/images/chambre-dorian.jpg'),
-('Cuisine', '../public/images/cuisine.jpg'),
-('Salon', '../public/images/salon.jpg'),
+('Chez Dorian', 'http://localhost:3001/public/images/chez-dorian.jpg'),
+('Devant chez Tonya', 'http://localhost:3001/public/images/devant-chez-tonya.jpg'),
+('Chambre de Dorian', 'http://localhost:3001/public/images/chambre-dorian.jpg'),
+('Cuisine', 'http://localhost:3001/public/images/cuisine.jpg'),
+('Salon', 'http://localhost:3001/public/images/salon.jpg'),
 ('Plage de jour', 'photo'),
-('Plage de nuit', '../public/images/plage-temporaire.jpg'),
-('Chambre de Claire et Baptiste', '../public/images/chambre-claire.jpg'),
-('Chambre de Tonya et Yann', '../public/images/chambre-tonya.jpg'),
-('Sale de bain', '../public/images/sdb.jpg'),
+('Plage de nuit', 'http://localhost:3001/public/images/plage-temporaire.jpg'),
+('Chambre de Claire et Baptiste', 'http://localhost:3001/public/images/chambre-claire.jpg'),
+('Chambre de Tonya et Yann', 'http://localhost:3001/public/images/chambre-tonya.jpg'),
+('Sale de bain', 'http://localhost:3001/public/images/sdb.jpg'),
 ('Bureau', 'photo'),
-('Devant chez Tonya', '../public/images/maison-anime.mkv');
+('Devant chez Tonya', 'http://localhost:3001/public/images/maison-anime.mkv');
 
 INSERT INTO "chapter"
 ("name")
