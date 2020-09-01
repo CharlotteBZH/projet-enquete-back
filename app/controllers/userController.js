@@ -2,7 +2,7 @@ const User = require("../models/user");
 
 const userController = {
     loginPlayer: async (req, res) => {
-
+        console.log(req);
         const user = await User.findOne({
             where: {
                 pseudo: 'player',
