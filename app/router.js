@@ -14,8 +14,8 @@ router.get('/play/question/:situationId',playController.getCharacterQuestionInCh
 router.get('/play/character/:characterId',playController.getCharacter);
 
 
-router.use((req, res) => {
-    res.status(404).send('Service does not exists\nSee : https://doc.localhost.api');
-});
+// router.use((req, res) => {
+//     res.status(404).send('Service does not exists\nSee : https://doc.localhost.api');
+// });
 
 module.exports = router;
