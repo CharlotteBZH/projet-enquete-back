@@ -11,7 +11,7 @@ const userController = {
             }
         });
 
-        if (user) {
+        if (!user) {
             console.log("l'utilisateur n'a pas pu se connecter");
             return;
         }
