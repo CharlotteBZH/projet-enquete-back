@@ -87,6 +87,19 @@ const userController = {
             newUser.save().then(() => {
                 console.log('nouveau joueur enregistré');
             });
+
+            // On stocke notre utilisateur en session
+            request.session.user = user;
+
+            // faire expirer la session au bout d'une heure
+            if (request.body.remember) {
+                request.session.cookie.expires = new Date(Date.now() + 60 * 60 * 1000);
+            }
+
+
+            console.log(user);
+
+            response.json(user);
         })
 
     }
