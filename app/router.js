@@ -18,7 +18,7 @@ router.get('/play/character/:characterId', playController.getCharacter);
 
 
 //inscription
-//router.post('/logon', userController.logonPlayer);
+router.post('/logon', userController.logonPlayer);
 
 //connexion
 router.post('/login', userController.loginPlayer);

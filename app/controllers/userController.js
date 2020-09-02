@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const emailValidator = require('email-validator');
 
 const userController = {
     loginPlayer: async (req, res) => {
@@ -10,7 +11,7 @@ const userController = {
             }
         });
 
-        if (!user) {
+        if (user) {
             console.log("l'utilisateur n'a pas pu se connecter");
             return;
         }
@@ -33,14 +34,61 @@ const userController = {
 
     },
 
-    checkIflogged: (req, res) => {
-        const user = req.session.user;
+    logonPlayer: (request, response) => {
+        console.log(request);
+        const pseudo = request.body.pseudo;
+        const mail = request.body.mail;
+        const checkMail = request.body.checkMail;
+        const pwd = request.body.pwd;
+        const checkPwd = request.body.checkPwd;
 
-        if (!user) {
-            //redirect vers connexion
+        // je teste que les valeurs obligatoire soient bien définis
+        if (!(pseudo && mail && checkMail && pwd && checkPwd)) {
+            console.log('Un champs est manquant');
+            console.log('pseudo', pseudo);
+            console.log('mail', mail);
+            console.log('checkMail', checkMail);
+            console.log('pwd', pwd);
+            console.log('checkPwd', checkPwd);
+            return;
         }
 
-        //res.json(user.dataValues);
+        User.findOne({
+            where: {
+                mail
+            }
+        }).then(user => {
+            if (user) {
+                console.log('Ce mail est déjà relié à un compte');
+                return;
+            }
+
+            if (mail !== checkMail) {
+                console.log('les 2 mails ne correspondent pas');
+                return;
+            }
+
+            if (pwd !== checkPwd) {
+                console.log('les 2 mots de passe ne sont pas identiques');
+                return;
+            }
+
+            if (!emailValidator.validate(mail)) {
+                console.log("L'email saisie n'est pas valide");
+                return;
+            }
+
+            let newUser = new User({
+                pseudo,
+                mail,
+                pwd
+            });
+
+            newUser.save().then(() => {
+                console.log('nouveau joueur enregistré');
+            });
+        })
+
     }
 };
 
