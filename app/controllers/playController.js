@@ -24,7 +24,7 @@ const playController = {
         attributes: ['id'],
         raw: true
       });
-
+    
       characters = characters.map((character) => character.id);
       console.log(characters);
       let questionList = await Question.getForSituationAndCharacter(situationId, characters);
