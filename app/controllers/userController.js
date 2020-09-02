@@ -102,6 +102,21 @@ const userController = {
             response.json(user);
         })
 
+    },
+
+    logoutPlayer: (request, response) => {
+        try {
+            if (!request.session) {
+                console.log("impossible de déconnecter quelqu'un non loggué")
+            } else {
+                request.session.destroy();
+                response.clearCookie('connect.sid'); // effacer le cookie du client
+                return response.status(200).json('Successful logout');
+            }
+
+        } catch (err) {
+            response.status(500).json(error.toString());
+        }
     }
 };
 

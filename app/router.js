@@ -25,7 +25,7 @@ router.post('/login', userController.loginPlayer);
 //router.post('/isLogged', userController.checkIflogged);
 
 //deconnexion
-//router.get('/logout', userController.logoutPlayer);
+router.post('/logout', userController.logoutPlayer);
 
 router.use((req, res) => {
     res.status(404).send('Service does not exists\nSee : https://doc.localhost.api');
