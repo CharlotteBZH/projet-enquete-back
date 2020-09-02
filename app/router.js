@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 router.get('/play/situation/:chapterId',playController.getSituation);
 router.get('/play/storytelling/:chapterId',playController.getStory);
 router.get('/play/question/:situationId',playController.getCharacterQuestionInChapter);
-router.get('/play/character/:characterId',playController.getCharacter);
+router.get('/play/character/:situation_characterId',playController.getCharacter);
 
 
 // router.use((req, res) => {

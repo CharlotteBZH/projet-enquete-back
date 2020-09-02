@@ -15,7 +15,7 @@ VALUES
 INSERT INTO "character"
 ("name", "picture", "is_guilty", "is_suspect", "alibi", "motive_id", "weapon_id")
 VALUES
-('Yann', 'photo', false, true, 'Il buvait un verre de St Emilion 1900 avec Baptiste dans le salon. Il s''est absenté mais juste pour aller chercher un tire-bouchon dans la cuisine puis dans son bureau.', 2, 1),
+('Yann', 'http://localhost:3001/public/images/yann-normal.jpg', false, true, 'Il buvait un verre de St Emilion 1900 avec Baptiste dans le salon. Il s''est absenté mais juste pour aller chercher un tire-bouchon dans la cuisine puis dans son bureau.', 2, 1),
 ('Baptiste', 'photo', false, true, 'Buvait un verre de vin avec Yann dans le salon, mais yann est parti pendant un certain temps pour chercher un tire-bouchon.', null, 1),
 ('Claire', 'photo', false, true, 'Claire voyant Valentine malade, elle l''accompagna dans la salle de bain du haut. Elle est parti 10mn chercher des médicaments dans sa chambre', 3, 1),
 ('Valentine', 'photo', false, true, 'Etait malade dans la salle de bain de CLaire avec cette dernière qui s''occupait d''elle.', 4, 1),

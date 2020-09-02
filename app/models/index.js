@@ -88,18 +88,27 @@ Situation.belongsTo(Chapter, {
   foreignKey: "chapter_id",
 });
 
-/*Place.belongsToMany(Chapter, {
-  as: "chapter_p",
-  through: "situation",
-  foreignKey: "place_id",
-  otherKey: "chapter_id",
+
+
+//character-situation_character
+Character.hasMany(Situation_character, {
+  as: "situation_characters",
+  foreignKey: "character_id",
 });
-Chapter.belongsToMany(Place, {
-  as: "places_c",
-  through: "situation",
-  foreignKey: "chapter_id",
-  otherKey: "place_id",
-});*/
+Situation_character.belongsTo(Character, {
+  as: "character",
+  foreignKey: "character_id",
+});
+
+//situation-situation_character
+Situation.hasMany(Situation_character, {
+  as: "situation_characters",
+  foreignKey: "situation_id",
+});
+Situation_character.belongsTo(Situation, {
+  as: "situation",
+  foreignKey: "situation_id",
+});
 
 //Situation-character association
 Situation.belongsToMany(Character, {
