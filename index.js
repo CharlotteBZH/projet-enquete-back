@@ -6,7 +6,8 @@ const router = require('./app/router');
 const cors = require('cors');
 const bodyParser = require('body-parser')
 
-const PORT = process.env.PORT || 5050;
+const userMiddleware = require('./app/middlewares/user');
+
 const app = express();
 
 
@@ -31,9 +32,11 @@ app.use(session({
   saveUninitialized: true
 }));
 
+app.use(userMiddleware);
+
 app.use(router);
 
-
+const PORT = process.env.PORT || 5050;
 app.listen(PORT, () => {
   console.log(`Listening on ${PORT} ...`);
 });

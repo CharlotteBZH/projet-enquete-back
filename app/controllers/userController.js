@@ -2,30 +2,45 @@ const User = require("../models/user");
 
 const userController = {
     loginPlayer: async (req, res) => {
-        console.log(req);
+
         const user = await User.findOne({
             where: {
-                //pseudo: req.body.pseudo,
                 mail: req.body.mail,
                 pwd: req.body.pwd
             }
         });
 
         if (!user) {
-            return res.render('signin', {
-                error: "Cet email n'existe pas"
-            });
+            console.log("l'utilisateur n'a pas pu se connecter");
+            return;
         }
-        delete user.dataValues.pwd;
-        console.log(user.dataValues);
-        res.json(user.dataValues);
+
+        //on va s'ocupper de crypter le mdp ici
+        // code à venir...
+
+        // On stocke notre utilisateur en session
+        req.session.user = user;
 
         // faire expirer la session au bout d'une heure
         if (req.body.remember) {
             req.session.cookie.expires = new Date(Date.now() + 60 * 60 * 1000);
         }
 
+        delete user.dataValues.pwd;
+        console.log(user.dataValues);
 
+        res.json(user.dataValues);
+
+    },
+
+    checkIflogged: (req, res) => {
+        const user = req.session.user;
+
+        if (!user) {
+            //redirect vers connexion
+        }
+
+        //res.json(user.dataValues);
     }
 };
 
