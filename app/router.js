@@ -18,14 +18,14 @@ router.get('/play/character/:characterId', playController.getCharacter);
 
 
 //inscription
-//router.post('/logon', userController.logonPlayer);
+router.post('/logon', userController.logonPlayer);
 
 //connexion
 router.post('/login', userController.loginPlayer);
 //router.post('/isLogged', userController.checkIflogged);
 
 //deconnexion
-//router.get('/logout', userController.logoutPlayer);
+router.post('/logout', userController.logoutPlayer);
 
 router.use((req, res) => {
     res.status(404).send('Service does not exists\nSee : https://doc.localhost.api');
