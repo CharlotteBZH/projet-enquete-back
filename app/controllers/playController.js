@@ -14,25 +14,17 @@ const playController = {
   // route : /play/question/:situationId
   getCharacterQuestionInChapter: async (req, res) => {
     try {
-      /*const chapterId= Number(req.params.chapterId)
-      let chapter = await Chapter.findByPk(chapterId);
-      if (!chapter) {
-        res.status(404).json("Cant find chapter with id " + chapterId);
-      }*/
+   
       const situationId = Number(req.params.situationId);
       let situation = await Situation.findByPk(situationId);
       if (!situation) {
         res.status(404).json("Cant find situation with id " + situationId);
       }
-      /*let situations = await Situation.findAll({
-        attributes: ['id'],
-        raw: true
-      });*/
       let characters = await Character.findAll({
         attributes: ['id'],
         raw: true
       });
-      //situations = situations.map((situation) => situation.id);
+    
       characters = characters.map((character) => character.id);
       console.log(characters);
       let questionList = await Question.getForSituationAndCharacter(situationId, characters);
@@ -87,21 +79,25 @@ const playController = {
     }
   },
 
-  // route : /play/character/:characterId
+// route : /play/character/:situation_characterId
   getCharacter: async (req, res) => {
     try {
-      const characterId = req.params.characterId;
-      let character = await Character.findByPk(characterId, { raw: true });
-      if (!character) {
-        res.status(404).json("Cant find character with id " + characterId);
+      const situation_characterId = Number(req.params.situation_characterId);
+      let situation_character = await Situation_character.findByPk(situation_characterId,{
+        include: ['character']
+      });
+      if (!situation_character) {
+
+        res.status(404).json("Cant find situation with id " + situation_characterId);
+    
       } else {
-        console.log(character)
-        res.status(200).json("ok");
+        res.status(200).json(situation_character);
       }
     } catch (error) {
       res.status(500).json(error);
     }
   },
+
 
 };
 
