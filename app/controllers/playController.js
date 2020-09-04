@@ -79,27 +79,33 @@ const playController = {
     }
   },
 
-// route : /play/character/:situation_characterId
+// route : /play/character/:situationId
   getCharacter: async (req, res) => {
-    try {
-      const situation_characterId = Number(req.params.situation_characterId);
-      let situation_character = await Situation_character.findByPk(situation_characterId,{
-        include: ['character']
-      });
-      if (!situation_character) {
+ try {
 
-        res.status(404).json("Cant find situation with id " + situation_characterId);
-    
-      } else {
-        res.status(200).json(situation_character);
-      }
-    } catch (error) {
-      res.status(500).json(error);
-    }
-  },
+  const situationId = Number(req.params.situationId);
+  let situation_character = await Situation_character.findAll({
+    where: {
+     situation_id : situationId,
+    }, raw: true,
+    include:["character"]
+  });
+
+  if (!situation_character) {
+
+    res.status(404).json("Cant find situation with id " + situation_character);
+
+  } else {
+    res.status(200).json(situation_character);
+  }
+} catch (error) {
+  res.status(500).json(error);
+}
+},
 
 
 };
+
 
 module.exports = playController;
 

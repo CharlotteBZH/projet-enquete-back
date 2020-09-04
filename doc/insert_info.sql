@@ -12,6 +12,7 @@ INSERT INTO "weapon"
 ("name")
 VALUES
 ('Couteau');
+
 INSERT INTO "character"
 ("name", "picture", "is_guilty", "is_suspect", "alibi", "motive_id", "weapon_id")
 VALUES
