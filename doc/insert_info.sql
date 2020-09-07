@@ -28,7 +28,7 @@ VALUES
 INSERT INTO "place"
 ("name", "picture")
 VALUES
-('Chez Dorian', 'http://localhost:3001/public/images/chez-dorian.jpg'),
+('Chez Dorian', 'http://localhost:3001/public/images/chez-dorian.png'),
 ('Devant chez Tonya', 'http://localhost:3001/public/images/devant-chez-tonya.jpg'),
 ('Chambre de Dorian', 'http://localhost:3001/public/images/chambre-dorian.jpg'),
 ('Cuisine', 'http://localhost:3001/public/images/cuisine.jpg'),
