@@ -39,7 +39,7 @@ VALUES
 ('Chambre de Tonya et Yann', 'http://localhost:3001/public/images/chambre-tonya.jpg'),
 ('Sale de bain', 'http://localhost:3001/public/images/sdb.jpg'),
 ('Bureau', 'photo'),
-('Devant chez Tonya', 'http://localhost:3001/public/images/devant-chez-tonya.jpg');
+('Devant chez Tonya', 'http://localhost:3001/public/images/devantTonya.jpg');
 
 INSERT INTO "chapter"
 ("name")
