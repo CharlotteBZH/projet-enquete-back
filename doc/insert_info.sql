@@ -16,13 +16,13 @@ VALUES
 INSERT INTO "character"
 ("name", "picture", "is_guilty", "is_suspect", "alibi", "motive_id", "weapon_id")
 VALUES
-('Yann', 'http://localhost:3001/public/images/yann-normal.jpg', false, true, 'Il buvait un verre de St Emilion 1900 avec Baptiste dans le salon. Il s''est absenté mais juste pour aller chercher un tire-bouchon dans la cuisine puis dans son bureau.', 2, 1),
-('Baptiste', 'photo', false, true, 'Buvait un verre de vin avec Yann dans le salon, mais yann est parti pendant un certain temps pour chercher un tire-bouchon.', null, 1),
-('Claire', 'photo', false, true, 'Claire voyant Valentine malade, elle l''accompagna dans la salle de bain du haut. Elle est parti 10mn chercher des médicaments dans sa chambre', 3, 1),
-('Valentine', 'photo', false, true, 'Etait malade dans la salle de bain de CLaire avec cette dernière qui s''occupait d''elle.', 4, 1),
-('Lily', 'photo', true, true, 'Est sensée être dans la maison voisine avec son frère.', 1, 1),
-('Maxime', 'photo', false, true, 'Dans la maison voisine avec sa soeur.', null, 1),
-('Policier', 'photo', false, false, 'pas d''alibi', null, 1);
+('Yann', 'http://localhost:3001/public/images/yann.png', false, true, 'Il buvait un verre de St Emilion 1900 avec Baptiste dans le salon. Il s''est absenté mais juste pour aller chercher un tire-bouchon dans la cuisine puis dans son bureau.', 2, 1),
+('Baptiste', 'http://localhost:3001/public/images/baptiste.png', false, true, 'Buvait un verre de vin avec Yann dans le salon, mais yann est parti pendant un certain temps pour chercher un tire-bouchon.', null, 1),
+('Claire', 'http://localhost:3001/public/images/claire.png', false, true, 'Claire voyant Valentine malade, elle l''accompagna dans la salle de bain du haut. Elle est parti 10mn chercher des médicaments dans sa chambre', 3, 1),
+('Valentine', 'http://localhost:3001/public/images/claire.png', false, true, 'Etait malade dans la salle de bain de CLaire avec cette dernière qui s''occupait d''elle.', 4, 1),
+('Lily', 'http://localhost:3001/public/images/lily.png', true, true, 'Est sensée être dans la maison voisine avec son frère.', 1, 1),
+('Maxime', 'http://localhost:3001/public/images/maxime.png', false, true, 'Dans la maison voisine avec sa soeur.', null, 1),
+('Policier', 'http://localhost:3001/public/images/police.png', false, false, 'pas d''alibi', null, 1);
 
 
 INSERT INTO "place"
@@ -33,13 +33,13 @@ VALUES
 ('Chambre de Dorian', 'http://localhost:3001/public/images/chambre-dorian.jpg'),
 ('Cuisine', 'http://localhost:3001/public/images/cuisine.jpg'),
 ('Salon', 'http://localhost:3001/public/images/salon.jpg'),
-('Plage de jour', 'photo'),
-('Plage de nuit', 'http://localhost:3001/public/images/plage-temporaire.jpg'),
+('Plage de jour', 'http://localhost:3001/public/images/plage.png'),
+('Plage de nuit', 'http://localhost:3001/public/images/crimescene.png'),
 ('Chambre de Claire et Baptiste', 'http://localhost:3001/public/images/chambre-claire.jpg'),
 ('Chambre de Tonya et Yann', 'http://localhost:3001/public/images/chambre-tonya.jpg'),
 ('Sale de bain', 'http://localhost:3001/public/images/sdb.jpg'),
 ('Bureau', 'photo'),
-('Devant chez Tonya', 'http://localhost:3001/public/images/maison-anime.mkv');
+('Devant chez Tonya', 'http://localhost:3001/public/images/devant-chez-tonya.jpg');
 
 INSERT INTO "chapter"
 ("name")
