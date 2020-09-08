@@ -92,10 +92,10 @@ VALUES
 INSERT INTO "question"
 ("description", "answer", "character_id", "situation_id")
 VALUES
-('Quel est ton métier ?', 'Je suis infirmière, j ai passé mon diplôme l an dernier.', 3, 6),
+('Quel est ton métier ?', 'Je suis infirmière, j''ai passé mon diplôme l''an dernier.', 3, 6),
 ('Tu es amie avec Tonya depuis combien de temps ?', 'En fait, je suis la cousine de Yann, c''est comme ça qu''on se connaît.', 3, 6),
-('Tu es très proches avec Yann ?', 'Oui, on a beaucoup d''intérêts en commun! Le vin en est un *rires*', 2, 6),
-('Alors Maxime! Toi et Lily vous faites quoi dans la vie ?', 'Je suis actuellement en Science politique et ma soeur étudie en école de droits pour devenir avocate.', 6, 7),
+('Tu es très proches de Yann ?', 'Oui, on a beaucoup d''intérêts en commun ! Le vin en est un *rires*', 2, 6),
+('Alors Maxime ! Toi et Lily vous faites quoi dans la vie ?', 'Je suis actuellement en Science politique et ma soeur étudie en école de droits pour devenir avocate.', 6, 7),
 ('Vous vivez tous les deux en colocations pas loin d''ici ?', 'Nous vivons chez nos parents, c''est la maison aux palmiers à une centaine de mètres sur la droite d''ici, tu as dû passer devant lors de ta… promenade…', 5, 7),
 ('Bonjour Yann, est ce que tu saurais où est Valentine ? Je l''ai appelée mais elle ne me répond pas.', 'Non je n''ai pas de nouvelles, elle a beaucoup bu hier soir et elle a été absente pendant un certain temps pendant la fête. Pas étonnant que tu n''aies pas pu lui parler. D''ailleurs, Claire aussi s''est absentée à peu près au même moment...c''est étrange.', 1, 11),
 ('Salut Claire, aurais tu des nouvelles de Valentine et saurais-tu pourquoi elle s''est absentée aussi longtemps hier soir ?', 'Oui, j''ai pris soin d''elle dans ma salle de bain, elle avait beaucoup bu et m''a parlé de toi, de la dispute avec Tonya. Je lui ai appelé un taxi après… tout ce qu''il s''est passé. Elle t''aime beaucoup tu sais… * regard plein de reproches *', 3, 12),
@@ -106,9 +106,9 @@ VALUES
 ('Salut Lily, qu''est ce que tu fais ?', '*air surpris* Rien, je récupère des affaires que j''avais prêté à Tonya… Je cherche mon collier...', 5, 14),
 ('Ton collier ? Il ressemble à quoi ?', 'C''est une chaîne en or. Avec une planche de surf en pendentif...', 5, 14),
 ('Tu faisais quoi hier avant que vous arriviez à la soirée ?', 'J''étais avec mon frère... *elle continue à chercher*', 5, 14),
-('Avec ton frère? mais il m''a dit que… *je la regarde fouiller* Tu veux que je t''aide à chercher ?', 'Non, ça ira, il ne doit pas être là. Et puis, c''est pas moi qu''il faut interroger, c''est Yan! c''est lui qui a des choses à cacher ! Il ne voulait pas que Tonya raconte tout sur lui dans les journaux! J''y vais salut!' , 5, 14),
+('Avec ton frère? mais il m''a dit que… *je la regarde fouiller* Tu veux que je t''aide à chercher ?', 'Non, ça ira, il ne doit pas être là. Et puis, c''est pas moi qu''il faut interroger, c''est Yann ! c''est lui qui a des choses à cacher ! Il ne voulait pas que Tonya raconte tout sur lui dans les journaux ! J''y vais salut!' , 5, 14),
 ('Lily', 'Tu suspectes donc Lily ?', 7, 16),
-('Admirassion obsessionnelle', 'Oh, je vois, tu penses que le mobile est lié à une admiration obsessionnelle pour Tonya', 7, 17)
+('Admiration obsessionnelle', 'Oh, je vois, tu penses que le mobile est lié à une admiration obsessionnelle pour Tonya', 7, 17)
 ;
 
 
@@ -131,19 +131,19 @@ VALUES
 INSERT INTO "storytelling"
 ("sentence", "chapter_id")
 VALUES
-('Juillet 2019, moi Dorian, Dev Freelance me retrouvais sans client pour l''été lorsque je reçu une invitation de mon premier amour.', 1),
+('Juillet 2019, moi Dorian, Dev Freelance me retrouvait sans client pour l''été lorsque je reçu une invitation de mon premier amour.', 1),
 ('Lorsque j''arrive chez Tonya je découvre qu''elle a un nouveau petit ami nommé Yann. Elle me propose d''aller m''installer dans ma chambre en attendant le restaurant puis la soirée avec des amis.', 2),
 ('Seul, je m''assois un instant sur le lit, je ne comprends pas trop ce que je fais là et quoi penser de cette situation embarrassante. Je décide de faire bonne figure malgré tout et sors de la pièce.', 3),
 ('En arrivant dans la cuisine, j''entends Tonya discuter avec une jeune fille. Mais elles s''interrompent en me voyant. Tonya me présente Lily pendant que je me fais à manger. Puis Lily s''en va et je me dispute avec Tonya', 4),
 ('En sortant de la cuisine je croise Valentine qui a entendu notre dispute. Je décide d''aller me promener un moment sur la plage pour décompresser.', 5),
-('Un peu plus tard, je reviens dans le salon. Tout le monde est parti au resto. Les invités reviennent et Tonya part se préparer pour la soirée. Je rencontre le couple Claire/Baptiste. Ils ont l''air gentils mais un peu distant.', 6),
-('Un peu plus tard dans la soirée… Il est 23h00 c''est le milieu de la soirée. Les voisins de Tonya et Yann arrivent. Je connais déjà Lily mais je découvre son frère Maxime.', 7),
+('Un peu plus tard, je reviens dans le salon. Tout le monde est parti au resto. Puis les invités reviennent et Tonya part se préparer pour la soirée. Je rencontre le couple Claire/Baptiste. Ils ont l''air gentils mais un peu distants.', 6),
+('Quelque temps après, dans la soirée… Il est 23h00, c''est le milieu de la soirée. Les voisins de Tonya et Yann arrivent. Je connais déjà Lily mais je découvre son frère Maxime.', 7),
 ('Ok, je comprends pourquoi tout le monde était froid avec moi. Tout le monde a entendu notre dispute avec Tonya plus tôt… D''ailleurs où est Tonya ? Ca commence à faire très long, même pour elle…', 8),
 ('Je décide d''aller la chercher mais ne la trouve pas dans sa chambre. Je préviens tout le monde et on commence à la chercher en l''appelant.', 8),
 ('Pendant que tout le monde cherche dans la maison, je décide d''aller la chercher sur la plage. Là, à quelques centaines de mètres de la maison, allongée par terre, je la retrouve face contre terre, un couteau planté dans le dos et le poing fermé sur une petite chose brillante. Une chaîne avec une planche de surf...', 9),
 ('Je tente de la réanimer en vain. La vie avait quitté son corps...', 9),
 ('Le lendemain matin, assis sur mon lit, je repense à cette soirée effroyable. La perte de cet être cher et… Les regards de tous sur moi.', 10),
-('Ils me pensent coupable. J''ai aperçu l''arme du crime quand la police l''a identifié. C''est couteau dont je me suis servi dans la cuisine est l''arme du crime. Il faut que je trouve le vrai meurtrier pour lui faire payer et prouver mon innocence avant d''être arrêté...', 10),
+('Ils me pensent coupable. J''ai aperçu l''arme du crime quand la police l''a identifiée. Le couteau dont je me suis servi dans la cuisine, est l''arme du crime. Il faut que je trouve le vrai meurtrier pour lui faire payer et prouver mon innocence avant d''être arrêté...', 10),
 ('Je décide de descendre à la cuisine. L''arme du crime vient d''ici, peut être que je trouverai des indices. Je tombe nez à nez avec Yann, complètement abattu.', 11),
 ('Je me demande ce qu''il s''est passé, je vais aller voir Claire pour l''interroger...', 12),
 ('Un peu choqué par la découverte des sentiments de Valentine, je décide de retourner voir Yann pour lui demander ce qu''il a fait lorsqu''il n''était pas avec Baptiste. En arrivant dans le salon, je tombe sur Maxime. Il a l''air stressé.', 13),
